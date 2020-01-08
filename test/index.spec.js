@@ -1,5 +1,5 @@
 const assert = require('assert');
-const {sum, mult, isPalindrome} = require('../index.js');
+const {sum, mult, isPalindrome, sortArrayUp} = require('../index.js');
 
 
 describe('function sum', () => {
@@ -45,6 +45,22 @@ describe('function isPalindrome', () => {
         assert.equal(isPalindrome("ADdA"), true);
     });
 });
+
+
+describe('function sotrArrayUp', () => {
+    it('should function sortArrayUp get correct result', () => {
+        assert.deepEqual(sortArrayUp([5, 4, 3, 2, 1]), [1, 2, 3, 4, 5])
+    });
+
+    it('should function sortArrayUp get correct result', () => {
+        assert.deepEqual(sortArrayUp([-123123, 6, 23, -342, 1, 80]), [-123123, -342, 1, 6, 23, 80])
+    });
+
+    it('should function sortArrayUp get correct result', () => {
+        assert.deepEqual(sortArrayUp([10, -10, 12, -12, 1919, -8008]), [-8008, -12, -10, 10, 12, 1919]);
+    });
+});
+
 
 
 
