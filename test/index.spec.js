@@ -1,6 +1,7 @@
 const assert = require('assert');
 const {sum, mult, isPalindrome} = require('../index.js');
 
+
 describe('function sum', () => {
     it('should function sum equal 10', () => {
         assert.equal(sum(2, 4), 6);
@@ -15,7 +16,8 @@ describe('function sum', () => {
     });
 });
 
-describe ('function mult', () => {
+
+describe('function mult', () => {
     it('should function mult equal 8', () => {
         assert.equal(mult(2, 4), 8);
     });
@@ -29,7 +31,20 @@ describe ('function mult', () => {
     });
 });
 
-it('should function isPalindrome equals true', () => {
-    assert.equal(isPalindrome('ogo'), true);
+
+describe('function isPalindrome', () => {
+    it('should function isPalindrome equal true', () => {
+        assert.equal(isPalindrome('Ogo'), true);
+    });
+
+    it('should function isPalindrome equal false', () => {
+        assert.equal(isPalindrome('TEst'), false);
+    });
+
+    it('should function isPalindrome work correctly', () => {
+        assert.equal(isPalindrome("ADdA"), true);
+    });
 });
+
+
 
