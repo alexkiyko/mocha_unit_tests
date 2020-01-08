@@ -6,8 +6,12 @@ describe('function sum', () => {
         assert.equal(sum(2, 4), 6);
     });
 
-    it ('should function sum not equal 0', () => {
+    it('should function sum not equal 0', () => {
         assert.notEqual(sum(2, 4), 5);
+    });
+
+    it('should function sum work correctly', () => {
+        assert.equal(sum(248, 252), 500);
     });
 });
 
@@ -20,6 +24,9 @@ describe ('function mult', () => {
         assert.notEqual(mult(2,4), 9);
     });
 
+    it('should function mult work correctly', () => {
+        assert.equal(mult(3, 10), 30);
+    });
 });
 
 it('should function isPalindrome equals true', () => {
