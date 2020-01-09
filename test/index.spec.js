@@ -1,10 +1,18 @@
 const assert = require('assert');
+const {expect} = require('chai');
+
 const {sum, mult, isPalindrome, sortArrayUp} = require('../index.js');
 
 
 describe('function sum', () => {
     it('should function sum equal 10', () => {
-        assert.equal(sum(2, 4), 6);
+        // assert.equal(sum(2, 4), 6);
+        expect(sum(2,4 )).eq(6); // example with chai
+    });
+
+    it('should function sum equal 10', () => {
+        // assert.equal(sum(2, 4), 6);
+        expect(sum(1,4 )).not.eq(4); // example with chai
     });
 
     it('should function sum not equal 0', () => {
@@ -38,8 +46,10 @@ describe('function isPalindrome', () => {
     });
 
     it('should function isPalindrome equal false', () => {
-        assert.equal(isPalindrome('TEst'), false);
+        // assert.equal(isPalindrome('TEst'), false);
+        expect(isPalindrome('TEst')).false;   // chai syntax
     });
+
 
     it('should function isPalindrome work correctly', () => {
         assert.equal(isPalindrome("ADdA"), true);
@@ -60,6 +70,8 @@ describe('function sotrArrayUp', () => {
         assert.deepEqual(sortArrayUp([10, -10, 12, -12, 1919, -8008]), [-8008, -12, -10, 10, 12, 1919]);
     });
 });
+
+
 
 
 
