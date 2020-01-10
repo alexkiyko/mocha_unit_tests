@@ -1,4 +1,4 @@
-module.exports = {sum, mult, isPalindrome, sortArrayUp};
+module.exports = {sum, mult, isPalindrome, sortArrayUp, oddOrEven, makeUpperCase};
 
 
 function sum(a = 0, b = 0) {
@@ -13,6 +13,14 @@ function isPalindrome(str = '') {
     return str.split('').reverse().join('').toLowerCase() === str.toLowerCase();
 }
 
-function sortArrayUp(arr){
+function sortArrayUp(arr = []){
     return arr.sort((a, b) => a - b);
+}
+
+function oddOrEven(n){
+    return n % 2 === 0;
+}
+
+function makeUpperCase(str = '') {
+    return str.toUpperCase(str);
 }
