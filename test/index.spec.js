@@ -78,19 +78,18 @@ describe('function sotrArrayUp', () => {
 
 
 describe('function oddOrEven', () => {
-    it ('should 12 equal even expect true', () => {
-       expect(oddOrEven(12)).true;
+    it('should 12 equal even expect true', () => {
+        expect(oddOrEven(12)).true;
     });
 
-    it ('should 99 equal odd expect false', () => {
+    it('should 99 equal odd expect false', () => {
         expect(oddOrEven(99)).false;
     });
 
-    it ('empty input expect false', () => {
+    it('empty input expect false', () => {
         expect(oddOrEven()).false;
     });
 });
-
 
 
 describe('functio makeUpperCase', () => {
