@@ -102,6 +102,9 @@ describe('functio makeUpperCase', () => {
         expect(makeUpperCase()).eq('');
     });
 
+    it('should not make uppercase numbers nas symbols args passed in ', () => {
+        expect(makeUpperCase('!@#123')).eq('!@#123');
+    });
 });
 
 
