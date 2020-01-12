@@ -32,7 +32,11 @@ function reversedString(str) {
     return rowBack;
 }
 
+function oppositeValue(number) {
+    return number * -1;
+}
 
-module.exports = {sum, mult, isPalindrome, sortArrayUp, oddOrEven, makeUpperCase, reversedString};
+
+module.exports = {sum, mult, isPalindrome, sortArrayUp, oddOrEven, makeUpperCase, reversedString, oppositeValue};
 
 

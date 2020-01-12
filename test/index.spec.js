@@ -1,6 +1,6 @@
 const {expect} = require('chai');
 
-const {sum, mult, isPalindrome, sortArrayUp, oddOrEven, makeUpperCase, reversedString} = require('../index.js');
+const {sum, mult, isPalindrome, sortArrayUp, oddOrEven, makeUpperCase, reversedString, oppositeValue} = require('../index.js');
 
 
 describe('function sum', () => {
@@ -105,6 +105,27 @@ describe('function makeUpperCase', () => {
 describe('function reversedString', () => {
     it('should return gnirts when passed in string', () => {
         expect(reversedString('string')).equal('gnirts');
+    });
+
+    it('should return "" when passed in empty string', () => {
+        expect(reversedString('')).equal('');
+    });
+
+    it('should not reverse word when passed in string', () => {
+        expect(reversedString('ABCD')).not.equal('ABCD');
+    });
+});
+
+
+describe('function oppositeValue', () => {
+    it('should return -1 when 1 passed in', () => {
+        expect(oppositeValue(1)).equal(-1);
+    });
+    it('should return -100 when 100 passed in', () => {
+        expect(oppositeValue(-100)).equal(100);
+    });
+    it('should ', () => {
+        expect(oppositeValue(10)).not.equal(-100);
     });
 });
 
