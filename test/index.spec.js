@@ -1,7 +1,6 @@
-const assert = require('assert');
 const {expect} = require('chai');
 
-const {sum, mult, isPalindrome, sortArrayUp, oddOrEven, makeUpperCase} = require('../index.js');
+const {sum, mult, isPalindrome, sortArrayUp, oddOrEven, makeUpperCase, reversedString} = require('../index.js');
 
 
 describe('function sum', () => {
@@ -78,21 +77,17 @@ describe('function sotrArrayUp', () => {
 
 
 describe('function oddOrEven', () => {
-    it('should 12 equal even expect true', () => {
-        expect(oddOrEven(12)).true;
+    it('should 12 equal Even expect true', () => {
+        expect(oddOrEven(12)).equal('Even');
     });
 
-    it('should 99 equal odd expect false', () => {
-        expect(oddOrEven(99)).false;
-    });
-
-    it('empty input expect false', () => {
-        expect(oddOrEven()).false;
+    it('should 99 equal Odd expect false', () => {
+        expect(oddOrEven(99)).equal('Odd');
     });
 });
 
 
-describe('functio makeUpperCase', () => {
+describe('function makeUpperCase', () => {
     it('should return input string upper case expect STRING', () => {
         expect(makeUpperCase('string')).eq('STRING');
     });
@@ -101,10 +96,18 @@ describe('functio makeUpperCase', () => {
         expect(makeUpperCase()).eq('');
     });
 
-    it('should not make uppercase numbers nas symbols args passed in ', () => {
+    it('should ignore uppercase when numbers and symbols passed in ', () => {
         expect(makeUpperCase('!@#123')).eq('!@#123');
     });
 });
+
+
+describe('function reversedString', () => {
+    it('should return gnirts when passed in string', () => {
+        expect(reversedString('string')).equal('gnirts');
+    });
+});
+
 
 
 

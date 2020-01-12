@@ -15,13 +15,24 @@ function sortArrayUp(arr = []) {
 }
 
 function oddOrEven(n) {
-    return n % 2 === 0;
+    return n % 2 === 0 ? 'Even' : 'Odd';
 }
 
 function makeUpperCase(str = '') {
     return str.toUpperCase(str);
 }
 
+function reversedString(str) {
+    let rowBack = '';
+    for (let i = str.length -1; i >= 0; i--) {
+        if (str[i] !== ' '){
+            rowBack += str[i];
+        }
+    }
+    return rowBack;
+}
 
 
-module.exports = {sum, mult, isPalindrome, sortArrayUp, oddOrEven, makeUpperCase};
+module.exports = {sum, mult, isPalindrome, sortArrayUp, oddOrEven, makeUpperCase, reversedString};
+
+
