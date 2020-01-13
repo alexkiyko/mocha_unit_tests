@@ -3,7 +3,7 @@
     "commonjs": true,
     "es6": true,
     "node": true,
-    "jest": true
+    "jest" : true
   },
   "extends": "eslint:recommended",
   "globals": {
@@ -16,7 +16,7 @@
   "rules": {
     "indent": [
       "error",
-      4
+      2
     ],
     "linebreak-style": [
       "error",
