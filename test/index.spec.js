@@ -1,6 +1,6 @@
 const {expect} = require('chai');
 
-const {sum, mult, isPalindrome, sortArrayUp, oddOrEven, makeUpperCase, reversedString, oppositeValue} = require('../index.js');
+const {sum, mult, isPalindrome, sortArrayUp, oddOrEven, makeUpperCase, reversedString, oppositeValue, typeOfSum, stringClean} = require('../index.js');
 
 describe('function sum', () => {
   it('should function sum equal 10', () => {
@@ -83,6 +83,10 @@ describe('function oddOrEven', () => {
   it('should 99 equal Odd expect false', () => {
     expect(oddOrEven(99)).equal('Odd');
   });
+
+  it('should 1 not equal Even expect true', () => {
+    expect(oddOrEven(1)).not.equal('Even');
+  });
 });
 
 
@@ -91,7 +95,7 @@ describe('function makeUpperCase', () => {
     expect(makeUpperCase('string')).eq('STRING');
   });
 
-  it('should eqaul empty string with no args passed in ', () => {
+  it('should equal empty string with no args passed in ', () => {
     expect(makeUpperCase()).eq('');
   });
 
@@ -120,14 +124,58 @@ describe('function oppositeValue', () => {
   it('should return -1 when 1 passed in', () => {
     expect(oppositeValue(1)).equal(-1);
   });
+
   it('should return -100 when 100 passed in', () => {
     expect(oppositeValue(-100)).equal(100);
   });
+
   it('should 10 not equal -100', () => {
     expect(oppositeValue(10)).not.equal(-100);
   });
+
+  it('should equa 0 with no args passed in', () => {
+    expect(oppositeValue()).equal(0);
+  });
 });
 
+
+describe('function typeOfSum', () => {
+  it('should function return typeof string', () => {
+    expect(typeOfSum(1,'a')).equal('string');
+  });
+
+  it('should function return typeof number', () => {
+    expect(typeOfSum(10, 10)).equal('number');
+  });
+
+  it('should function return typeof number', () => {
+    expect(typeOfSum(null, 15)).equal('number');
+  });
+
+  it('should function return typeof number', () => {
+    expect(typeOfSum(null, undefined)).equal('number');
+  });
+
+  it('should function return typeof number', () => {
+    expect(typeOfSum('a', false)).equal('string');
+  });
+});
+
+
+
+describe('function stringClean', () => {
+  it('should function remove numbers from string', () => {
+    expect(stringClean('123string321')).equal('string');
+  });
+
+  it('should function remove numbers from string with symbols', () => {
+    expect(stringClean('1Hel4lo!!!')).equal('Hello!!!');
+  });
+
+  it('should function remove numbers equal empty string', () => {
+    expect(stringClean('124124')).equal('');
+  });
+});
 
 
 

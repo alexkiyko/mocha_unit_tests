@@ -32,11 +32,19 @@ function reversedString(str) {
   return rowBack;
 }
 
-function oppositeValue(number) {
+function oppositeValue(number = 0) {
   return number * -1;
 }
 
+function typeOfSum(a, b) {
+  return typeof(a + b);
+}
 
-module.exports = {sum, mult, isPalindrome, sortArrayUp, oddOrEven, makeUpperCase, reversedString, oppositeValue};
+function stringClean(s){
+  let str = s.replace(/[0-9]/gi, '');
+  return str;
+}
+
+module.exports = {sum, mult, isPalindrome, sortArrayUp, oddOrEven, makeUpperCase, reversedString, oppositeValue, typeOfSum, stringClean};
 
 
