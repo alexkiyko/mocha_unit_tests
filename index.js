@@ -46,5 +46,3 @@ function stringClean(s){
 }
 
 module.exports = {sum, mult, isPalindrome, sortArrayUp, oddOrEven, makeUpperCase, reversedString, oppositeValue, typeOfSum, stringClean};
-
-

@@ -3,129 +3,137 @@ const {expect} = require('chai');
 const {sum, mult, isPalindrome, sortArrayUp, oddOrEven, makeUpperCase, reversedString, oppositeValue, typeOfSum, stringClean} = require('../index.js');
 
 describe('function sum', () => {
-  it('should function sum equal 10', () => {
+  it('should sum 2 and 8 equal 10', () => {
     expect(sum(2, 8)).equal(10);
   });
 
-  it('should function sum equal -1', () => {
+  it('should sum -1 and 0 equal -1', () => {
     expect(sum(-1, 0)).equal(-1);
   });
 
-  it('should function sum not equal 0', () => {
+  it('should sum 0 and -1 not equal 0', () => {
     expect(sum(0, -1)).not.equal(0);
   });
 
-  it('should function sum accept one argument', () => {
+  it('should accept one argument 1 and return 1', () => {
     expect(sum(1)).equal(1);
   });
 
-  it('should function sum return 0 without any arguments', () => {
+  it('should equal 0 by default', () => {
     expect(sum()).equal(0);
+  });
+
+  it('should return type number', () => {
+    expect(typeof sum(1, 1)).equal('number');
   });
 });
 
 
 describe('function mult', () => {
-  it('should function mult equal 0 without input arguments', () => {
+  it('should equal 0 by default', () => {
     expect(mult()).equal(0);
   });
 
-  it('should function mult equal 0 with one argument passed in', () => {
+  it('should one argument equal 0', () => {
     expect(mult(2)).equal(0);
   });
 
-  it('should function mult not equal 200', () => {
+  it('should mult 2 and 10 not equal 200', () => {
     expect(mult(2, 10)).not.equal(200);
   });
 
-  it('shoud function mult equal 9', () => {
+  it('shoud mult 3 and 3 equal 9', () => {
     expect(mult(3, 3)).equal(9);
   });
 });
 
 
 describe('function isPalindrome', () => {
-  it('should function isPalindrome equal true', () => {
+  it('should palindrome of a equal true', () => {
     expect(isPalindrome('a')).true;
   });
 
-  it('should function isPalindrome equal false', () => {
+  it('should palindrome of TEst equal false', () => {
     expect(isPalindrome('TEst')).false;
   });
 
-  it('should function isPalindrome equal true with empty string input', () => {
+  it('should empty string by default equal true', () => {
     expect(isPalindrome('')).true;
   });
 });
 
 
 describe('function sotrArrayUp', () => {
-  it('should function sortArrayUp sort positive numbers', () => {
+  it('should sort positive numbers', () => {
     expect(sortArrayUp([5, 4, 3, 2, 1])).deep.equal([1, 2, 3, 4, 5]);
   });
 
-  it('should function sortArrayUp sort negative numbers', () => {
+  it('should sort negative numbers', () => {
     expect(sortArrayUp([-123123, -6, -23, -342, 1, -80])).deep.equal([-123123, -342, -80, -23, -6, 1]);
-
   });
 
-  it('should function sortArrayUp return empty array', () => {
+  it('should sort positive and negative numbers', () => {
+    expect(sortArrayUp([101, -1, 10, -23, 56, -86])).deep.equal([-86, -23, -1, 10, 56, 101]);
+  });
+
+  it('should return empty array by default', () => {
     expect(sortArrayUp()).deep.equal([]);
   });
 });
 
 
 describe('function oddOrEven', () => {
-  it('should 12 equal Even expect true', () => {
+  it('should 12 equal even', () => {
     expect(oddOrEven(12)).equal('Even');
   });
 
-  it('should 99 equal Odd expect false', () => {
+  it('should 99 equal odd', () => {
     expect(oddOrEven(99)).equal('Odd');
   });
 
-  it('should 1 not equal Even expect true', () => {
+  it('should 1 not equal even', () => {
     expect(oddOrEven(1)).not.equal('Even');
   });
 });
 
 
 describe('function makeUpperCase', () => {
-  it('should return input string upper case expect STRING', () => {
-    expect(makeUpperCase('string')).eq('STRING');
+  it('should return STRING', () => {
+    expect(makeUpperCase('string')).equal('STRING');
   });
 
-  it('should equal empty string with no args passed in ', () => {
-    expect(makeUpperCase()).eq('');
+  it('should equal empty string by default', () => {
+    expect(makeUpperCase()).equal('');
   });
 
-  it('should ignore uppercase when numbers and symbols passed in ', () => {
-    expect(makeUpperCase('!@#123')).eq('!@#123');
+  it('should ignore numbers and symbols', () => {
+    expect(makeUpperCase('!@#123')).equal('!@#123');
   });
 });
 
 
 describe('function reversedString', () => {
-  it('should return gnirts when passed in string', () => {
+  it('should string equal gnirts', () => {
     expect(reversedString('string')).equal('gnirts');
   });
 
-  it('should return "" when passed in empty string', () => {
-    expect(reversedString('')).equal('');
+  it('should 123 not equal 123', () => {
+    expect(reversedString('123')).not.equal('123');
   });
 
-  it('should not reverse word when passed in string', () => {
-    expect(reversedString('ABCD')).not.equal('ABCD');
+  it('should equal empty string', () => {
+    expect(reversedString('')).equal('');
   });
 });
 
 
+
 describe('function oppositeValue', () => {
-  it('should return -1 when 1 passed in', () => {
+  it('should -1 equal 1', () => {
     expect(oppositeValue(1)).equal(-1);
   });
 
-  it('should return -100 when 100 passed in', () => {
+  it('should -100 equal 100', () => {
     expect(oppositeValue(-100)).equal(100);
   });
 
@@ -133,30 +141,30 @@ describe('function oppositeValue', () => {
     expect(oppositeValue(10)).not.equal(-100);
   });
 
-  it('should equa 0 with no args passed in', () => {
+  it('should equal 0 by default', () => {
     expect(oppositeValue()).equal(0);
   });
 });
 
 
 describe('function typeOfSum', () => {
-  it('should function return typeof string', () => {
+  it('should return type string', () => {
     expect(typeOfSum(1,'a')).equal('string');
   });
 
-  it('should function return typeof number', () => {
+  it('should return type number', () => {
     expect(typeOfSum(10, 10)).equal('number');
   });
 
-  it('should function return typeof number', () => {
+  it('should return type number', () => {
     expect(typeOfSum(null, 15)).equal('number');
   });
 
-  it('should function return typeof number', () => {
+  it('should return type number', () => {
     expect(typeOfSum(null, undefined)).equal('number');
   });
 
-  it('should function return typeof number', () => {
+  it('should return type string', () => {
     expect(typeOfSum('a', false)).equal('string');
   });
 });
@@ -164,15 +172,15 @@ describe('function typeOfSum', () => {
 
 
 describe('function stringClean', () => {
-  it('should function remove numbers from string', () => {
+  it('should remove numbers from string', () => {
     expect(stringClean('123string321')).equal('string');
   });
 
-  it('should function remove numbers from string with symbols', () => {
+  it('should remove numbers from string and keep symbols', () => {
     expect(stringClean('1Hel4lo!!!')).equal('Hello!!!');
   });
 
-  it('should function remove numbers equal empty string', () => {
+  it('should remove numbers and return empty string', () => {
     expect(stringClean('124124')).equal('');
   });
 });
