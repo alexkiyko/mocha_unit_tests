@@ -1,8 +1,23 @@
-const {expect} = require('chai');
+const { expect } = require('chai');
+const {
+  sum,
+  mult,
+  isPalindrome,
+  sortArrayUp,
+  oddOrEven,
+  makeUpperCase,
+  reversedString,
+  oppositeValue,
+  typeOfSum,
+  stringClean,
+  removeDuplicates
+} = require('../index.js');
 
-const {sum, mult, isPalindrome, sortArrayUp, oddOrEven, makeUpperCase, reversedString, oppositeValue, typeOfSum, stringClean} = require('../index.js');
+
+
 
 describe('function sum', () => {
+
   it('should sum 2 and 8 equal 10', () => {
     expect(sum(2, 8)).equal(10);
   });
@@ -29,41 +44,47 @@ describe('function sum', () => {
 });
 
 
+
 describe('function mult', () => {
-  it('should equal 0 by default', () => {
-    expect(mult()).equal(0);
+
+  it('should mult negative int', () => {
+    expect(mult(-1, 1)).equal(-1);
   });
 
-  it('should one argument equal 0', () => {
-    expect(mult(2)).equal(0);
+  it('should mult decimal numbers', () => {
+    expect(mult(2.5, 2.5)).equal(6.25);
   });
 
   it('should mult 2 and 10 not equal 200', () => {
     expect(mult(2, 10)).not.equal(200);
   });
 
-  it('shoud mult 3 and 3 equal 9', () => {
+  it('should mult 3 and 3 equal 9', () => {
     expect(mult(3, 3)).equal(9);
   });
 });
 
 
+
 describe('function isPalindrome', () => {
-  it('should palindrome of a equal true', () => {
+
+  it('should palindrome of "a" equal true', () => {
     expect(isPalindrome('a')).true;
   });
 
-  it('should palindrome of TEst equal false', () => {
+  it('should palindrome of "TEst" equal false', () => {
     expect(isPalindrome('TEst')).false;
   });
 
-  it('should empty string by default equal true', () => {
-    expect(isPalindrome('')).true;
+  it('should palindrome of "racecar" equal true', () => {
+    expect(isPalindrome('racecar')).true;
   });
 });
 
 
-describe('function sotrArrayUp', () => {
+
+describe('function sortArrayUp', () => {
+
   it('should sort positive numbers', () => {
     expect(sortArrayUp([5, 4, 3, 2, 1])).deep.equal([1, 2, 3, 4, 5]);
   });
@@ -82,7 +103,9 @@ describe('function sotrArrayUp', () => {
 });
 
 
+
 describe('function oddOrEven', () => {
+
   it('should 12 equal even', () => {
     expect(oddOrEven(12)).equal('Even');
   });
@@ -94,16 +117,22 @@ describe('function oddOrEven', () => {
   it('should 1 not equal even', () => {
     expect(oddOrEven(1)).not.equal('Even');
   });
+
+  it('should - 1 not equal even', () => {
+    expect(oddOrEven(-1)).equal('Odd');
+  });
 });
 
 
+
 describe('function makeUpperCase', () => {
-  it('should return STRING', () => {
+
+  it('should equal "STRING"', () => {
     expect(makeUpperCase('string')).equal('STRING');
   });
 
-  it('should equal empty string by default', () => {
-    expect(makeUpperCase()).equal('');
+  it('should equal "CODEWARS"', () => {
+    expect(makeUpperCase('CodeWars')).equal('CODEWARS');
   });
 
   it('should ignore numbers and symbols', () => {
@@ -112,8 +141,10 @@ describe('function makeUpperCase', () => {
 });
 
 
+
 describe('function reversedString', () => {
-  it('should string equal gnirts', () => {
+
+  it('should string equal "gnirts"', () => {
     expect(reversedString('string')).equal('gnirts');
   });
 
@@ -129,6 +160,7 @@ describe('function reversedString', () => {
 
 
 describe('function oppositeValue', () => {
+
   it('should -1 equal 1', () => {
     expect(oppositeValue(1)).equal(-1);
   });
@@ -147,20 +179,22 @@ describe('function oppositeValue', () => {
 });
 
 
+
 describe('function typeOfSum', () => {
-  it('should return type string', () => {
+
+  it('should equal type string', () => {
     expect(typeOfSum(1,'a')).equal('string');
   });
 
-  it('should return type number', () => {
+  it('should equal type number', () => {
     expect(typeOfSum(10, 10)).equal('number');
   });
 
-  it('should return type number', () => {
+  it('should equal type number', () => {
     expect(typeOfSum(null, 15)).equal('number');
   });
 
-  it('should return type number', () => {
+  it('should equal type number', () => {
     expect(typeOfSum(null, undefined)).equal('number');
   });
 
@@ -172,6 +206,7 @@ describe('function typeOfSum', () => {
 
 
 describe('function stringClean', () => {
+
   it('should remove numbers from string', () => {
     expect(stringClean('123string321')).equal('string');
   });
@@ -187,11 +222,21 @@ describe('function stringClean', () => {
 
 
 
+describe('function removeDuplicates', () => {
 
+  it('should remove positive int duplicates',() => {
+    expect(removeDuplicates([1, 2, 3, 4, 5, 6, 7, 7, 7])).deep.eq([1, 2, 3, 4, 5, 6, 7]);
+  });
 
+  it('should remove negative int duplicates',() => {
+    expect(removeDuplicates([-10, -12, -1, -10, -12, -13])).deep.eq([-10, -12, -1, -13]);
+  });
 
+  it('should remove letters duplicated', () => {
+    expect(removeDuplicates(['a', 'b', 'c', 'a', 'd'])).deep.eq(['a', 'b', 'c', 'd'])
+  });
 
-
-
-
-
+  it('should remove symbols duplicated', () => {
+    expect(removeDuplicates(['!', '?', '$', '&', '!'])).deep.eq(['!', '?', '$', '&'])
+  });
+});
